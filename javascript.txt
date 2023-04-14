@@ -1,0 +1,32 @@
+const calculator = document.querySelector('.calculator');
+const keys = calculator.querySelector('.calculator-keys');
+const screen = calculator.querySelector('.calculator-screen');
+
+let firstValue = 0;
+let operator = null;
+let waitingForSecondValue = false;
+
+function calculate(firstValue, operator, secondValue) {
+  switch (operator) {
+    case '+':
+      return firstValue + secondValue;
+    case '-':
+      return firstValue - secondValue;
+    case '*':
+      return firstValue * secondValue;
+    case '/':
+      return firstValue / secondValue;
+    case '%':
+      return firstValue % secondValue;
+    case 'square':
+      return firstValue ** 2;
+    default:
+      return secondValue;
+  }
+}
+
+keys.addEventListener('click', (event) => {
+  const { target } = event;
+  const { value } = target;
+
+ 
